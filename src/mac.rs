@@ -44,7 +44,7 @@ macro_rules! cpp {
         $(#[$m])*
         #[repr(C)]
         pub struct $id {
-            $($i : $t ,)*
+            $(pub $i : $t ,)*
         }
         cpp!{$($rest)*}
     };

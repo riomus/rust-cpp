@@ -211,21 +211,6 @@ fn derive_copy() {
 }
 
 cpp! {
-    struct PrivK {
-        a: i32 as "int32_t",
-    }
-
-    struct PubK {
-        a: i32 as "int32_t",
-    }
-}
-
-#[test]
-fn pub_struct() {
-    let x = PrivK { a: 10 };
-}
-
-cpp! {
     raw "#define SOME_VALUE 10"
 
     fn string_body_impl() -> i32 as "int32_t" r#"
