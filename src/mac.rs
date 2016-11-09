@@ -43,7 +43,7 @@ macro_rules! cpp {
      struct $id:ident { $($i:ident : $t:ty as $cpp:tt ,)* } $($rest:tt)*) => {
         $(#[$m])*
         #[repr(C)]
-        struct $id {
+        pub struct $id {
             $($i : $t ,)*
         }
         cpp!{$($rest)*}
@@ -76,7 +76,7 @@ macro_rules! cpp {
      enum prefix $id:ident { $($i:ident ,)* } $($rest:tt)*) => {
         $(#[$m])*
         #[repr(C)]
-        pub num $id {
+        pub enum $id {
             $($i ,)*
         }
         cpp!{$($rest)*}
