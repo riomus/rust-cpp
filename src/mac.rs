@@ -54,7 +54,7 @@ macro_rules! cpp {
      enum $id:ident { $($i:ident ,)* } $($rest:tt)*) => {
         $(#[$m])*
         #[repr(C)]
-        enum $id {
+        pub enum $id {
             $($i ,)*
         }
         cpp!{$($rest)*}
@@ -65,7 +65,7 @@ macro_rules! cpp {
      enum class $id:ident { $($i:ident ,)* } $($rest:tt)*) => {
         $(#[$m])*
         #[repr(C)]
-        enum $id {
+        pub enum $id {
             $($i ,)*
         }
         cpp!{$($rest)*}
@@ -76,7 +76,7 @@ macro_rules! cpp {
      enum prefix $id:ident { $($i:ident ,)* } $($rest:tt)*) => {
         $(#[$m])*
         #[repr(C)]
-        enum $id {
+        pub num $id {
             $($i ,)*
         }
         cpp!{$($rest)*}
